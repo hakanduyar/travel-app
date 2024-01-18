@@ -27,7 +27,17 @@ const Features = () => {
             <h2 className="bold-40 lg:bold-64 ">Our Features</h2>
           </div>
           <ul>
-            {[FEATURES.map((feature) => <FeatureItem title={feature.title} />)]}
+            {[
+              FEATURES.map((feature) => (
+                <FeatureItem
+                  key={feature.title}
+                  title={feature.title}
+                  icon={feature.icon}
+                  variant={feature.variant}
+                  description={feature.description}
+                />
+              )),
+            ]}
           </ul>
         </div>
       </div>
@@ -35,7 +45,14 @@ const Features = () => {
   );
 };
 
-const FeatureItem = ({ title }) => {
+type FeatureItem = {
+  title: string;
+  icon: string;
+  variant: string;
+  description: string;
+};
+
+const FeatureItem = ({ title, icon, variant, description }: FeatureItem) => {
   return <div>{title}</div>;
 };
 
