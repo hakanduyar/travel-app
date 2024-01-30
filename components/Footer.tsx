@@ -35,6 +35,7 @@ const Footer = () => {
                     className="flex gap-4 md:flex-col lg:flex-row"
                   >
                     <p className="whitespace-nowrap">{link.label}:</p>
+                    <p>{link.value}</p>
                   </Link>
                 ))}
               </FooterColumn>
